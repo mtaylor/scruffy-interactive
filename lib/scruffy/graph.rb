@@ -136,7 +136,7 @@ module Scruffy
       options[:theme]               ||= theme
       options[:value_formatter]     ||= value_formatter
       options[:point_markers]       ||= point_markers
-      options[:size]                ||= (options[:width] ? [options[:width], (options.delete(:width) * 0.6).to_i] : [600, 360])
+      options[:size]                ||= [options[:width] ? options[:width] : 600, options[:height] ? options[:height] : options[:width] ? options[:width] * 0.6 : 360]
       options[:title]               ||= title
       options[:layers]              ||= layers
       options[:min_value]           ||= bottom_value(:padded)
