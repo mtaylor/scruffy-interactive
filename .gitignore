@@ -1,0 +1,5 @@
+website/images/graphs/*
+spec/output/
+.project
+*~
+*.swp
