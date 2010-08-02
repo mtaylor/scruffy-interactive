@@ -9,6 +9,7 @@
 module Scruffy::Components; end
 
 require 'scruffy/components/base'
+require 'scruffy/components/axis'
 require 'scruffy/components/title'
 require 'scruffy/components/background'
 require 'scruffy/components/graphs'

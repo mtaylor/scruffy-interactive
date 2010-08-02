@@ -20,6 +20,7 @@ module Scruffy::Themes
     attr_accessor :background     # Background color or array of two colors
     attr_accessor :colors         # Array of colors for data graphs
     attr_accessor :marker         # Marker color for grid lines, values, etc.
+    attr_accessor :axis           # Marker color for grid lines, values, etc.
     attr_accessor :font_family    # Font family: Not really supported.  Maybe in the future.
 
     # Returns a new Scruffy::Themes::Base object.
@@ -35,6 +36,7 @@ module Scruffy::Themes
       self.background = descriptor[:background]
       self.colors     = descriptor[:colors]
       self.marker     = descriptor[:marker]
+      self.axis     = descriptor[:axis]
       self.font_family = descriptor[:font_family]
     end
     
@@ -62,6 +64,7 @@ module Scruffy::Themes
       super({  
               :background => [:black, '#4A465A'],
               :marker => :white, 
+              :axis => :white,
               :colors => %w(#6886B4 #FDD84E #72AE6E #D1695E #8A6EAF #EFAA43 white)
              })
     end
@@ -73,6 +76,7 @@ module Scruffy::Themes
       super({
               :background => ['#101010', '#999977'],
               :marker => :white,
+              :axis => :white,
               :colors => %w(#DD3300 #66AABB #225533 #992200)
             })
       
@@ -85,6 +89,7 @@ module Scruffy::Themes
       super({
               :background => ['#670A0A', '#831515'],
               :marker => '#DBD1C1',
+              :axis => :white,
               :colors => %w(#007777 #444477 #994444 #77FFBB #D75A20)
             })
     end
@@ -96,6 +101,7 @@ module Scruffy::Themes
       super({
               :background => ['#3B411F', '#4A465A'],
               :marker => '#DBD1C1',
+              :axis => '#DBD1C1',
               :colors => %w(#AA3322 #DD3322 #DD6644 #FFEE88 #BBCC66 #779933)
             })
     end
@@ -110,6 +116,7 @@ module Scruffy::Themes
               # :marker => :white,
               :background => [:black, '#4A465A'],
               :marker => :white,
+              :axis => :white,
               :colors => %w(#FFBBBB #00CC33 #7788BB #EEAA44 #FFDD11 #44BBDD #DD6677)
             })
     end
@@ -122,6 +129,7 @@ module Scruffy::Themes
       super({
               :background => [:black, '#4A465A'],
               :marker => :white,
+              :axis => :white,
               :colors => %w(#CC9933 #FFCC66 #CCCC99 #CCCC33 #99CC33 #3333CC #336699 #6633CC #9999CC #333366)
             })
     end
@@ -133,6 +141,7 @@ module Scruffy::Themes
       super({
               :background => ['#670A0A', '#831515'],
               :marker => '#DBD1C1',
+              :axis => '#DBD1C1',
               :colors => %w(#F2C8CA #BF545E #D2808E #97985C #B3B878 #A24550)
             })
     end
