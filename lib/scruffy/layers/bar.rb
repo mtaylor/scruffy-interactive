@@ -6,9 +6,20 @@ module Scruffy::Layers
   #
   # Standard bar graph.  
   class Bar < Base
-  
+    attr_accessor :bar_width_percent
+
+    def initialize(options = {})
+      super(options)
+      @bar_width_percent = options[:bar_width] ? options[:bar_width] : nil
+    end
+
     # Draw bar graph.
     def draw(svg, coords, options = {})
+      # The percentage of space that the bar itself will fill in its allocated slot
+      if @bar_width_percent
+        @bar_width = @bar_width* @bar_width_percent
+      end
+
       coords.each do |coord|
         x, y, bar_height = (coord.first-(@bar_width * 0.5)), coord.last, (height - coord.last)
 
@@ -19,7 +30,7 @@ module Scruffy::Layers
                     :style => "fill: black; fill-opacity: 0.15; stroke: none;" )
 
         }
-        
+
         svg.rect( :x => x, :y => y, :width => @bar_width, :height => bar_height, 
                   :fill => color.to_s, 'style' => "opacity: #{opacity}; stroke: none;" )
       end
