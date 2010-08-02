@@ -25,7 +25,6 @@ module Scruffy::Layers
         area_color = @area_colors[0]
         color_count = 1
       else
-        puts "Never Set Area Color"
         area_color = color
       end
 
@@ -35,13 +34,11 @@ module Scruffy::Layers
       # Draw Lower Area Polygons
       if @baselines
         # Get the Color of this Area
-        puts "Drawing Baselines"
         @baselines.sort! {|x,y| y <=> x }
         @baselines.each do |baseline|
           if color_count
             area_color = area_colors[color_count]
             color_count = color_count + 1
-            puts area_color.to_s
             if color_count >= area_colors.size
               color_count = 0
             end
