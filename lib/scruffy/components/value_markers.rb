@@ -27,6 +27,7 @@ module Scruffy
           # The Y co-ordinate of this marker
           y_coord_unit = bounds[:height] / (options[:max_value] - options[:min_value])
           marker = y_coord_unit * mv
+          marker = marker - relative(3)
 
           # The Value of the Marker
           marker_value = mv
